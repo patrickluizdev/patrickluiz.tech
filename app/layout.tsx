@@ -6,25 +6,23 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
 	title: {
-		default: "Patrick Luiz Tech",
-		template: "%s | Patrick Luiz Tech",
+		default: "Patrick Luiz - Especialista em Desenvolvimento e Segurança de Sistemas",
+		template: "%s | Patrick Luiz - Especialista em Tecnologia"
 	},
-	description: "Especialista em soluções de tecnologia",
+	description: "Especialista em Desenvolvimento, Segurança de Sistemas, Cloud Computing, e muito mais. Inspiro equipes a alcançarem objetivos individuais e coletivos.",
 	openGraph: {
-		title: "Profile Patrick Luiz",
+		title: "Patrick Luiz - Especialista em Tecnologia",
 		description:
-			"Especialista em soluções de tecnologia",
+    "Sou um programador dedicado e participativo, especializado em Desenvolvimento, Segurança de Sistemas, Cloud Computing e muito mais. Inspiro equipes a alcançarem objetivos individuais e coletivos.",
 		url: "https://patrickluiz.tech",
-		siteName: "Profile Patrick Luiz",
+		siteName: "Patrick Luiz Tech",
 		images: [
 			{
 				url: "https://patrickluiz.tech/SEO.png",
-				width: 1920,
-				height: 1080,
 			},
 		],
 		locale: "pt-BR",
-		type: "website",
+		type: "profile",
 	},
 	robots: {
 		index: true,
@@ -38,7 +36,7 @@ export const metadata: Metadata = {
 		},
 	},
 	icons: {
-		shortcut: "/lg.svg",
+		shortcut: "/patrickluiztech-ico.png",
 	},
 };
 const inter = Inter({
