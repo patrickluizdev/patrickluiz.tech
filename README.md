@@ -1,1 +1,0 @@
-# patrickluiz.tech
