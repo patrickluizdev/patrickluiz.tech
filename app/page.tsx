@@ -14,13 +14,15 @@ export default function Home() {
 			<nav className="my-16 animate-fade-in">
 				<ul className="flex items-center justify-center gap-4">
 					{navigation.map((item) => (
-						<Link
-							key={item.href}
-							href={item.href}
-							className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
-						>
-							{item.name}
-						</Link>
+						<li>
+							<Link
+								key={item.href}
+								href={item.href}
+								className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
+							>
+								{item.name}
+							</Link>
+						</li>
 					))}
 				</ul>
 			</nav>
@@ -36,7 +38,7 @@ export default function Home() {
 			<div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
 			<div className="my-16 text-center animate-fade-in w-9/12">
 				<h2 className="text-sm text-zinc-500 ">
-					Olá, sou Patrick Luiz, especialista de soluções em tecnologia. Minha área de atuação atual é de desenvolvimento front-end, e minha expertise se baseia nos pilares de infraestrutura, desempenho, segurança e consumo de APIs.
+					Olá, sou Patrick Luiz, especialista de soluções em tecnologia. Minha área de atuação atual é de desenvolvimento front-end, e minha expertise se baseia nos pilares de infraestrutura, desempenho e segurança.
 				</h2>
 			</div>
 		</div>
