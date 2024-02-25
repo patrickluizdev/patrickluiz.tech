@@ -23,7 +23,7 @@ services:
         - traefik.http.routers.jatabara.rule=Host(`patrickluiz.tech`)
         - traefik.http.routers.jatabara.entrypoints=jatabara
         - traefik.http.routers.jatabara.tls.certresolver=le
-        - traefik.http.routers.jatabara.service=flowise
+        - traefik.http.routers.jatabara.service=jatabara
         - traefik.http.services.jatabara.loadbalancer.server.port=3000
 
 networks:
