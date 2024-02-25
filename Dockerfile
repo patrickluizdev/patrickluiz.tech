@@ -1,23 +1,18 @@
 FROM node:latest AS build
-
 WORKDIR /app
-
-# COPY package.json ./
+ENV REPO_NAME=patrickluiz.tech
 RUN npm install -g pnpm && apt install git
-RUN git clone https://github.com/patrickluizdev/patrickluiz.tech.git
-RUN cd patrickluiz.tech
+RUN git clone https://github.com/patrickluizdev/${REPO_NAME}.git
+WORKDIR /app/${REPO_NAME}
 RUN pnpm install
-
 RUN pnpm run build
 
 FROM node:hydrogen-slim AS production
-
+ENV REPO_NAME=patrickluiz.tech
 WORKDIR /app
-
 RUN npm install -g pnpm
+COPY --from=build /app/${REPO_NAME}/node_modules ./node_modules
+COPY --from=build /app/${REPO_NAME}/.next ./.next
+COPY --from=build /app/${REPO_NAME}/public ./public
 
-COPY --from=build /app/node_modules ./node_modules
-COPY --from=build /app/.next ./.next
-COPY --from=build /app/public ./public
-
-CMD ["pnpm", "start"]
+CMD ["npx", "serve@latest", "out"]

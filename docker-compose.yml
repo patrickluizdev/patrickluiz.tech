@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  jatabara:
+    image: jatabara/myprofile:latest
+    networks:
+      - traefik_public
+      - app_network
+    environment:
+      - NODE_ENV=production
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 1024M
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.jatabara.rule=Host(`patrickluiz.tech`)
+        - traefik.http.routers.jatabara.entrypoints=jatabara
+        - traefik.http.routers.jatabara.tls.certresolver=le
+        - traefik.http.routers.jatabara.service=flowise
+        - traefik.http.services.jatabara.loadbalancer.server.port=3000
+
+networks:
+  traefik_public:
+    external: true
+  app_network:
+    external: true
