@@ -16,6 +16,7 @@
     "@types/react-dom": "18.2.4",
     "@upstash/redis": "^1.20.6",
     "contentlayer": "^0.3.0",
+    "esbuild": "0.17.x",
     "export": "^0.1.337",
     "framer-motion": "^10.12.12",
     "lucide-react": "^0.220.0",
